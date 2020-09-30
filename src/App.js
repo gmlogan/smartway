@@ -13,7 +13,7 @@ function App() {
   
   return (
     <div>
-      <h2>{greetings.greeting_one}, {greetings.greeting_two}</h2>
+      <h1>{greetings.greeting_one}, {greetings.greeting_two}</h1>
       <h2>{greetings_message()}</h2>
     </div>
     
