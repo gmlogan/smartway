@@ -1,26 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
 
 function App() {
+  const greetings = {
+    greeting_one : 'Hello',
+    greeting_two : 'world',
+  }
+
+  function greetings_message (){
+    return 'Hello World 2';
+  }
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-          Graham was here
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h2>{greetings.greeting_one}, {greetings.greeting_two}</h2>
+      <h2>{greetings_message()}</h2>
     </div>
+    
   );
 }
 
