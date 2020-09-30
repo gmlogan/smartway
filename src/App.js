@@ -1,4 +1,5 @@
 import React from 'react';
+import CoursesList from './CoursesList';
 
 const courses = [
   {
@@ -33,27 +34,14 @@ const courses = [
 function App() {
   return (
     <div>
-      <h1>List of Courses</h1>
+      <h1>List of Courses with 2 functions</h1>
       <hr />
       {
-        courses.map(function (course) {
-          return (
-            <div key={course.id}>
-              <span><strong>{course.title}</strong> :  </span>
-              <span>By: {course.author}</span>
-              <p/>
-              <span>Course URL: {course.url}</span>
-              <span>|Hours:{course.hours_video}</span>
-              <span>|#Lessons:{course.number_of_lectures}</span>
-              <span>|Rating:{course.rating}</span>
-              <p/>
-              
-              
-            </div>
-          );
-        })
+        <CoursesList prop1={courses}/>
       }
     </div>
   );
 }
+
+
 export default App;
