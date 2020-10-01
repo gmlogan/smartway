@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import CoursesList from './CoursesList';
 import CoursesList1 from './CoursesList1';
 
@@ -35,25 +35,31 @@ const courses = [
 
 const App = () => {
 
+  const [searchText, setSearchText] = useState('');
+
+  const filteredCourses = courses.filter(course => {
+    return course.title.includes(searchText) || course.author.includes(searchText);
+  });
+
   const handleSearchInputChange = event => {
-    console.log(event.target.value);
+    setSearchText(event.target.value);;
   }
 
-  const handleSeachInputKeyPress = event => {
-    if (event.key === 'Enter') {
-      console.log('Enter key pressed! Search Value: ' + event.target.value);
-    }
-  }
+  
 
   return (
     <div>
       <h1>List of Courses with 2 functions</h1>
       <label htmlFor="searchInput">Search:</label>
-      <input id="searchInput" type="text" onChange={handleSearchInputChange} onKeyPress={handleSeachInputKeyPress}></input>
+      
+      <input id="searchInput" type="text"
+        onChange={handleSearchInputChange}>
+      </input>
+      
       <h2> List 1</h2>
       <hr />
       {
-        <CoursesList courses={courses}/>
+        <CoursesList courses={filteredCourses}/>
       }
       <h2> List 2</h2>
       <hr />
