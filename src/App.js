@@ -1,5 +1,6 @@
 import React from 'react';
 import CoursesList from './CoursesList';
+import CoursesList1 from './CoursesList1';
 
 const courses = [
   {
@@ -37,7 +38,12 @@ function App() {
       <h1>List of Courses with 2 functions</h1>
       <hr />
       {
-        <CoursesList prop1={courses}/>
+        <CoursesList courses={courses}/>
+      }
+      <h2> List 2</h2>
+      <hr />
+      {
+        <CoursesList1 courses={courses} />
       }
     </div>
   );

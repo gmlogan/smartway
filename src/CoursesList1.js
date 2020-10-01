@@ -1,6 +1,6 @@
 import React from 'react';
 
-function CoursesList(props) {
+function CoursesList1(props) {
 
     return (
         props.courses.map(function (course) {
@@ -21,4 +21,4 @@ function CoursesList(props) {
         })
     )
 }
-export default CoursesList;
+export default CoursesList1;
