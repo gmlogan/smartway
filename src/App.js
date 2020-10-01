@@ -36,6 +36,7 @@ function App() {
   return (
     <div>
       <h1>List of Courses with 2 functions</h1>
+      <h2> List 1</h2>
       <hr />
       {
         <CoursesList courses={courses}/>
