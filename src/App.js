@@ -1,6 +1,8 @@
 import React,{useState} from 'react';
 import CoursesList from './CoursesList';
 import CoursesList1 from './CoursesList1';
+import Search from './Search';
+
 
 const courses = [
   {
@@ -36,15 +38,14 @@ const courses = [
 const App = () => {
 
   const [searchText, setSearchText] = useState('');
-
+  const handleSearch = event => {
+    setSearchText(event.target.value);
+  }
   const filteredCourses = courses.filter(course => {
     return course.title.includes(searchText) || course.author.includes(searchText);
   });
 
-  const handleSearchInputChange = event => {
-    setSearchText(event.target.value);;
-  }
-
+  
   
 
   return (
@@ -52,9 +53,7 @@ const App = () => {
       <h1>List of Courses with 2 functions</h1>
       <label htmlFor="searchInput">Search:</label>
       
-      <input id="searchInput" type="text"
-        onChange={handleSearchInputChange}>
-      </input>
+      <Search onSearch={handleSearch}></Search>
       
       <h2> List 1</h2>
       <hr />
