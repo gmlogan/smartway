@@ -32,10 +32,24 @@ const courses = [
   }
 ];
 
-function App() {
+
+const App = () => {
+
+  const handleSearchInputChange = event => {
+    console.log(event.target.value);
+  }
+
+  const handleSeachInputKeyPress = event => {
+    if (event.key === 'Enter') {
+      console.log('Enter key pressed! Search Value: ' + event.target.value);
+    }
+  }
+
   return (
     <div>
       <h1>List of Courses with 2 functions</h1>
+      <label htmlFor="searchInput">Search:</label>
+      <input id="searchInput" type="text" onChange={handleSearchInputChange} onKeyPress={handleSeachInputKeyPress}></input>
       <h2> List 1</h2>
       <hr />
       {
